@@ -103,6 +103,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Иерархический план задач агента: статусы, зависимости, подзадачи и пружинные анимации",
     tags: ["list", "framer-motion", "ui"],
   },
+  {
+    id: "robot-hero",
+    route: "/robot-hero",
+    num: "12",
+    title: "Robot Hero",
+    desc: "3D-робот на Three.js следит за курсором, моргает и «влюбляется» по клику; антенна-навбар с CTA",
+    tags: ["hero", "3d", "three.js", "shaders"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
