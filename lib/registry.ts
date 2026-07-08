@@ -111,6 +111,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "3D-робот на Three.js следит за курсором, моргает и «влюбляется» по клику; антенна-навбар с CTA",
     tags: ["hero", "3d", "three.js", "shaders"],
   },
+  {
+    id: "modern-hero",
+    route: "/modern-hero",
+    num: "13",
+    title: "Modern Hero",
+    desc: "Кинематографический скролл в духе SpaceX: раскрытие центрального кадра по clip-path, параллакс-снимки и Lenis",
+    tags: ["hero", "scroll", "parallax", "lenis"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
