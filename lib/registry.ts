@@ -127,6 +127,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Примитив анимации текста по символам/словам/строкам: пресеты fade/slide/blur/scale/shake и кастомные variants",
     tags: ["text", "animation", "framer-motion"],
   },
+  {
+    id: "ink-reveal",
+    route: "/ink-reveal",
+    num: "15",
+    title: "Ink Reveal",
+    desc: "Курсор стирает чернильную маску мазками с «дрожащим» краем, обнажая изображение — чистый canvas, без библиотек",
+    tags: ["canvas", "cursor", "reveal"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
