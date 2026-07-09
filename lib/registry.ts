@@ -119,6 +119,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Кинематографический скролл в духе SpaceX: раскрытие центрального кадра по clip-path, параллакс-снимки и Lenis",
     tags: ["hero", "scroll", "parallax", "lenis"],
   },
+  {
+    id: "text-effect",
+    route: "/text-effect",
+    num: "14",
+    title: "Text Effect",
+    desc: "Примитив анимации текста по символам/словам/строкам: пресеты fade/slide/blur/scale/shake и кастомные variants",
+    tags: ["text", "animation", "framer-motion"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
