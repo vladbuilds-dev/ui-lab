@@ -143,6 +143,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Полноэкранный Pong, который сам выбивает пиксельный текст «PROMPTING / IS ALL YOU NEED» — чистый canvas, без библиотек",
     tags: ["canvas", "hero", "game"],
   },
+  {
+    id: "map",
+    route: "/map",
+    num: "17",
+    title: "World Map",
+    desc: "Точечная карта мира с анимированными дугами-маршрутами между городами, пульсирующими точками и подписями (dotted-map)",
+    tags: ["map", "framer-motion", "svg"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
