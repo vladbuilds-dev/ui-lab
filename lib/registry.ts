@@ -135,6 +135,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Курсор стирает чернильную маску мазками с «дрожащим» краем, обнажая изображение — чистый canvas, без библиотек",
     tags: ["canvas", "cursor", "reveal"],
   },
+  {
+    id: "animated-hero-section",
+    route: "/animated-hero-section",
+    num: "16",
+    title: "Prompting Is All You Need",
+    desc: "Полноэкранный Pong, который сам выбивает пиксельный текст «PROMPTING / IS ALL YOU NEED» — чистый canvas, без библиотек",
+    tags: ["canvas", "hero", "game"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
