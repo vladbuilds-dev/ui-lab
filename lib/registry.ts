@@ -151,6 +151,22 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Точечная карта мира с анимированными дугами-маршрутами между городами, пульсирующими точками и подписями (dotted-map)",
     tags: ["map", "framer-motion", "svg"],
   },
+  {
+    id: "horizon-hero",
+    route: "/horizon-hero",
+    num: "18",
+    title: "Horizon Hero",
+    desc: "Космический скролл-герой на Three.js: звёздное поле, туманность, слои гор и Bloom; камера летит сквозь сцены HORIZON → COSMOS → INFINITY (GSAP)",
+    tags: ["hero", "3d", "three.js", "gsap", "scroll"],
+  },
+  {
+    id: "scroll-morph-hero",
+    route: "/scroll-morph-hero",
+    num: "19",
+    title: "Scroll Morph Hero",
+    desc: "Фотокарточки собираются из хаоса в кольцо, а по скроллу перетекают в веерную арку с 3D-флипом по наведению (framer-motion)",
+    tags: ["hero", "scroll", "framer-motion", "3d"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
