@@ -167,6 +167,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Фотокарточки собираются из хаоса в кольцо, а по скроллу перетекают в веерную арку с 3D-флипом по наведению (framer-motion)",
     tags: ["hero", "scroll", "framer-motion", "3d"],
   },
+  {
+    id: "scroll-expansion-hero",
+    route: "/scroll-expansion-hero",
+    num: "20",
+    title: "Scroll Expansion Hero",
+    desc: "Медиа (видео/картинка) раскрывается на весь экран по скроллу, заголовок разъезжается, затем проявляется контент; переключатель Video/Image (framer-motion)",
+    tags: ["hero", "scroll", "media", "framer-motion"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
