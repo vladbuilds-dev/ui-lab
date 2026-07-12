@@ -175,6 +175,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Медиа (видео/картинка) раскрывается на весь экран по скроллу, заголовок разъезжается, затем проявляется контент; переключатель Video/Image (framer-motion)",
     tags: ["hero", "scroll", "media", "framer-motion"],
   },
+  {
+    id: "dynamic-hero",
+    route: "/dynamic-hero",
+    num: "21",
+    title: "Dynamic Hero",
+    desc: "Герой с canvas-стрелкой: пунктирная дуга рисуется от курсора к кнопке CTA (следит за мышью); медиа-карточка с play-видео — чистый canvas",
+    tags: ["hero", "canvas", "cursor"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
