@@ -183,6 +183,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Герой с canvas-стрелкой: пунктирная дуга рисуется от курсора к кнопке CTA (следит за мышью); медиа-карточка с play-видео — чистый canvas",
     tags: ["hero", "canvas", "cursor"],
   },
+  {
+    id: "parallax-floating",
+    route: "/parallax-floating",
+    num: "22",
+    title: "Parallax Floating",
+    desc: "Разбросанные фото парят и смещаются параллаксом за курсором по глубине (depth), с stagger-появлением; на motion/react",
+    tags: ["parallax", "gallery", "motion"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
