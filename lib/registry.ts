@@ -191,6 +191,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Разбросанные фото парят и смещаются параллаксом за курсором по глубине (depth), с stagger-появлением; на motion/react",
     tags: ["parallax", "gallery", "motion"],
   },
+  {
+    id: "vertical-tabs",
+    route: "/vertical-tabs",
+    num: "23",
+    title: "Vertical Tabs",
+    desc: "Секция услуг с вертикальными табами: автоплей с прогресс-полосой, вертикальная карусель изображений со spring-переходом (motion, hugeicons)",
+    tags: ["tabs", "carousel", "motion", "autoplay"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
