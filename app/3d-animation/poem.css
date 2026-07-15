@@ -1,0 +1,247 @@
+/* Сцена «3D Poem» — в промте даны только keyframes, классы сцены
+   (.hero-section/.cube/.face…) реконструированы. Всё заскоуплено под
+   .poem3d, т.к. имена вроде .container глобальны и утекли бы на другие
+   страницы при клиентской навигации. */
+
+@keyframes left {
+  100% {
+    margin-left: -54000px;
+  }
+}
+
+@keyframes back {
+  100% {
+    margin-left: -54870px;
+  }
+}
+
+@keyframes right {
+  100% {
+    margin-left: -55740px;
+  }
+}
+
+@keyframes filter-animation {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(100deg);
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2.5);
+  }
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(3px);
+  }
+}
+
+@keyframes brightness {
+  0% {
+    filter: brightness(1) contrast(1);
+  }
+  100% {
+    filter: brightness(0.8) contrast(1.3);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes poem3d-spin {
+  from {
+    transform: rotateX(-6deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-6deg) rotateY(-360deg);
+  }
+}
+
+.poem3d .hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #050507;
+}
+
+.poem3d .hero-section > .container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poem3d .content {
+  position: relative;
+  transform-origin: center center;
+}
+
+.poem3d .container-full {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.8);
+  perspective: 1400px;
+}
+
+.poem3d .backgroundImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  animation: zoom-in 45s ease-in-out infinite alternate,
+    brightness 14s ease-in-out infinite alternate;
+}
+
+.poem3d .boyImage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 92%;
+  object-fit: contain;
+  z-index: 2;
+  animation: blur 9s ease-in-out infinite alternate;
+}
+
+.poem3d .animated.hue {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 140, 60, 0.28),
+    rgba(60, 80, 255, 0.22) 55%,
+    rgba(255, 60, 120, 0.24)
+  );
+  mix-blend-mode: overlay;
+  animation: filter-animation 12s ease-in-out infinite;
+}
+
+/* контейнеры куба и его отражения */
+.poem3d .container-full .container,
+.poem3d .container-reflect {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.poem3d .container-full .container {
+  transform: translateY(-60px);
+}
+
+.poem3d .container-reflect {
+  transform: translateY(110px) scaleY(-1);
+  opacity: 0.18;
+  filter: blur(2px);
+  -webkit-mask-image: linear-gradient(to top, #000 20%, transparent 85%);
+  mask-image: linear-gradient(to top, #000 20%, transparent 85%);
+}
+
+.poem3d .cube {
+  position: relative;
+  width: 870px;
+  height: 150px;
+  transform-style: preserve-3d;
+  animation: poem3d-spin 90s linear infinite;
+}
+
+.poem3d .face {
+  position: absolute;
+  width: 870px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.poem3d .face.front {
+  transform: translateZ(435px);
+}
+
+.poem3d .face.back {
+  transform: rotateY(180deg) translateZ(435px);
+}
+
+.poem3d .face.left {
+  transform: rotateY(-90deg) translateZ(435px);
+}
+
+.poem3d .face.right {
+  transform: rotateY(90deg) translateZ(435px);
+}
+
+.poem3d .face.top,
+.poem3d .face.bottom {
+  height: 870px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.poem3d .face.top {
+  transform: rotateX(90deg) translateZ(75px);
+}
+
+.poem3d .face.bottom {
+  transform: rotateX(-90deg) translateZ(795px);
+}
+
+.poem3d .face.text {
+  background: rgba(8, 8, 14, 0.35);
+  backdrop-filter: blur(1px);
+}
+
+.poem3d .face.text p {
+  margin: 0;
+  white-space: nowrap;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 92px;
+  line-height: 150px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.poem3d .face.left p {
+  animation: left 720s linear infinite;
+}
+
+.poem3d .face.back p {
+  animation: back 720s linear infinite;
+}
+
+.poem3d .face.right p {
+  animation: right 720s linear infinite;
+}
+
+.poem3d .face.text span {
+  color: #ffcf87;
+  font-style: normal;
+  animation: text-glow 4s ease-in-out infinite;
+}

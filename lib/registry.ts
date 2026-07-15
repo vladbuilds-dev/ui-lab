@@ -199,6 +199,22 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Секция услуг с вертикальными табами: автоплей с прогресс-полосой, вертикальная карусель изображений со spring-переходом (motion, hugeicons)",
     tags: ["tabs", "carousel", "motion", "autoplay"],
   },
+  {
+    id: "hero-scroll-animation",
+    route: "/hero-scroll-animation",
+    num: "24",
+    title: "Hero Scroll Animation",
+    desc: "Скролл-стек из двух экранов: верхняя секция сжимается и наклоняется, нижняя распрямляется навстречу; сетка-фон и гигантский футер-водяной знак (motion)",
+    tags: ["hero", "scroll", "motion", "sticky"],
+  },
+  {
+    id: "3d-animation",
+    route: "/3d-animation",
+    num: "25",
+    title: "3D Poem Animation",
+    desc: "Кинематографичный герой: строки поэмы бегут по граням вращающегося 3D-куба с отражением, фон дышит zoom/hue-анимациями — чистый CSS 3D",
+    tags: ["3d", "css-only", "hero", "typography"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
