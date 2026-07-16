@@ -215,6 +215,14 @@ export const REGISTRY: ComponentEntry[] = [
     desc: "Кинематографичный герой: строки поэмы бегут по граням вращающегося 3D-куба с отражением, фон дышит zoom/hue-анимациями — чистый CSS 3D",
     tags: ["3d", "css-only", "hero", "typography"],
   },
+  {
+    id: "image-comparison-slider",
+    route: "/image-comparison-slider",
+    num: "26",
+    title: "Image Comparison Slider",
+    desc: "Before/after-сравнение изображений: перетаскиваемая рукоятка с clip-path-маской, поддержка мыши и тача — без библиотек",
+    tags: ["slider", "interactive", "images"],
+  },
 ];
 
 export function getEntryByRoute(route: string): ComponentEntry | undefined {
